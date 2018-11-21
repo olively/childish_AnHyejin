@@ -324,7 +324,7 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" width=150 height=150 src="../resources/img/team/chul.jpg" alt="">
+              <img class="mx-auto rounded-circle" width=150 height=150 src="/resources/img/team/chul.jpg" alt="">
               <br><br>
               <h4>Yun Cheol</h4>
               <p class="text-muted">Developer</p>
@@ -332,7 +332,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" width=150 height=150 src="../resources/img/team/hyejin.jpg" alt="">
+              <img class="mx-auto rounded-circle" width=150 height=150 src="/resources/img/team/hyejin.jpg" alt="">
               <br><br>
               <h4>Lee Hye-jin</h4>
               <p class="text-muted">Lead Developer</p>
@@ -340,7 +340,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" width=150 height=150 src="../resources/img/team/changho.jpg" alt="">
+              <img class="mx-auto rounded-circle" width=150 height=150 src="../../resources/img/team/changho.jpg" alt="">
               <br><br>
               <h4>Ahn Chang-ho</h4>
               <p class="text-muted">Developer</p>
