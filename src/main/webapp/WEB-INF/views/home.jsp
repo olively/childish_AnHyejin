@@ -12,5 +12,6 @@
 <h2>Really nice day!!</h2>
 <h3>Bye!!!!!</h3>
 <P>  The time on the server is ${serverTime}. </P>
+<img src="/resources/img/team/chul.jpg"/>
 </body>
 </html>
