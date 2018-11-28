@@ -49,6 +49,7 @@
 	#mainNav.navbar-shrink .navbar-brand {
     color: #57afbd;
 	}
+
 	
 	hr {
     max-width: 50px;
@@ -218,8 +219,8 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/school.PNG">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/school.PNG" alt="">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/1.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -233,8 +234,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/freetalk.PNG">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/freetalk.PNG" alt="">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/2.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -248,8 +249,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/deptalk.PNG">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/deptalk.PNG" alt="">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/3.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -263,8 +264,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/photo.PNG">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/photo.PNG" alt="">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/4.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -278,8 +279,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/QnA.PNG">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/QnA.PNG" alt="">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/5.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -293,8 +294,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/notice.PNG">
-              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/notice.PNG" alt="">
+            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/6.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -340,7 +341,7 @@
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" width=150 height=150 src="../../resources/img/team/changho.jpg" alt="">
+              <img class="mx-auto rounded-circle" width=150 height=150 src="/resources/img/team/changho.jpg" alt="">
               <br><br>
               <h4>Ahn Chang-ho</h4>
               <p class="text-muted">Developer</p>
