@@ -7,19 +7,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+          <li class="nav-item">
+              <a class="nav-link" href="#">Introduce</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FreeTalk
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+           <li class="nav-item">
+              <a class="nav-link" href="#">Dept Talk</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="#">QnA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#">Notice</a>
             </li>
           </ul>
         </div>
