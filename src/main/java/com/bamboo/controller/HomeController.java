@@ -50,4 +50,34 @@ public class HomeController {
 		
 		return "main";
 	}
+	
+	@RequestMapping(value = "/gallery", method = RequestMethod.GET)
+	public String gallery(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		//테스트 코드ㅇㄴㄹㄴㅇㄹ
+		return "gallery";
+	}
+	
+	@RequestMapping(value = "/freetalk", method = RequestMethod.GET)
+	public String freetalk(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		//테스트 코드ㅇㄴㄹㄴㅇㄹ
+		return "freetalk";
+	}
+	
+	
 }
