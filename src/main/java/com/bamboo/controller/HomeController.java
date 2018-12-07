@@ -32,6 +32,13 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+<<<<<<< HEAD
+		return "main";
+	}
+	
+	@RequestMapping(value = "/signin", method = RequestMethod.GET)
+	public String signIn(Locale locale, Model model) {
+=======
 	
 		return "home";
 	}
@@ -40,15 +47,14 @@ public class HomeController {
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
+>>>>>>> master
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "main";
+		return "signin";
+	}
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signUp() {
+		return "signup";
 	}
 	
 	//gallery
