@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -55,7 +58,18 @@
 	text-transform: uppercase;
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
+$(document).ready(function(){
+	$("#freetalk").attr('class', 'nav-item active');
+})
+
 </style>
+
+<!-- $(document).ready(function(){
+
+	$('#dept_talk').prop()
+}) -->
+
+
 </head>
 
 <body>
@@ -63,22 +77,7 @@
 	<!-- Header -->
 	<jsp:include page="/WEB-INF/views/header.jsp" flush="true" />
 	
-	 <li class="nav-item">
-              <a class="nav-link" href="#">Dept Talk</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">QnA</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Notice</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+	
 
 	<!-- Page Content -->
 	<div class="container" id="post">
