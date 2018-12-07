@@ -32,22 +32,19 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
-<<<<<<< HEAD
+		
 		return "main";
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String signIn(Locale locale, Model model) {
-=======
-	
-		return "home";
+	return "home";
 	}
 	
 	//bamboo main
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
->>>>>>> master
 		
 		return "signin";
 	}
