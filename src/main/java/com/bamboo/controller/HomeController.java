@@ -32,11 +32,22 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+<<<<<<< HEAD
 		return "main";
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String signIn(Locale locale, Model model) {
+=======
+	
+		return "home";
+	}
+	
+	//bamboo main
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String main(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+>>>>>>> master
 		
 		return "signin";
 	}
@@ -46,6 +57,7 @@ public class HomeController {
 		return "signup";
 	}
 	
+	//gallery
 	@RequestMapping(value = "/gallery", method = RequestMethod.GET)
 	public String gallery(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -60,6 +72,7 @@ public class HomeController {
 		return "gallery";
 	}
 	
+	//free talk
 	@RequestMapping(value = "/freetalk", method = RequestMethod.GET)
 	public String freetalk(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -74,5 +87,63 @@ public class HomeController {
 		return "freetalk";
 	}
 	
+	//post
+	@RequestMapping(value = "/post", method = RequestMethod.GET)
+	public String post(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "post";
+	}
 	
+	//login
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+
+		return "login";
+	}
+	
+	//signup
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signup(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+
+		return "signup";
+	}
+	
+	//write
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
+	public String write(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+
+		return "write";
+	}
 }

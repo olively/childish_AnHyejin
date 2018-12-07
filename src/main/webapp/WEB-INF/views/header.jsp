@@ -10,21 +10,21 @@
           <li class="nav-item">
               <a class="nav-link" href="#">Introduce</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="freetalk">
               <a class="nav-link" href="#">FreeTalk
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-           <li class="nav-item">
+           <li class="nav-item" id="depttalk">
               <a class="nav-link" href="#">Dept Talk</a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item " id="gallery">
               <a class="nav-link" href="#">Gallery</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="QnA">
               <a class="nav-link" href="#">QnA</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="notice">
               <a class="nav-link" href="#">Notice</a>
             </li>
           </ul>
