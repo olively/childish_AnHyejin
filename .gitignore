@@ -4,4 +4,5 @@
 # Ada Library Information
 *.ali
 
-/target
+/target/
+*.properties
