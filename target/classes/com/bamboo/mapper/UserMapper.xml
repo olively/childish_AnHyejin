@@ -2,9 +2,18 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+
 <mapper namespace="com.bamboo.mapper.UserMapper">
 	<select id="signUp" resultType="com.bamboo.domain.User_DTO">
-		
+
 	</select>
+
+	<select id="getRead" resultType="com.bamboo.domain.User_DTO">
+		select * from Bamboo_User where p_uid = #{p_uid}
+	</select>
+	
+	<insert id="Insert" parameterType="com.bamboo.domain.User_DTO">
+		Insert into Bamboo_User(p_uid, f_code, name, alias, password)
+		values(#{p_uid}, #{f_code}, #{name}, #{alias}, #{password})
+	</insert>
 </mapper>

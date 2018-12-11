@@ -7,19 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bamboo.domain.User_DTO;
-import com.bamboo.mapper.BoardMapper;
+import com.bamboo.mapper.UserMapper;
 
-import lombok.Setter;
 
 @Repository
-public class BoardDAOImpl implements BoardDAO{
+public class UserDAOImpl implements UserDAO{
 	
-	@Setter(onMethod_ = @Autowired)
-	private BoardMapper session;
+	@Autowired
+	private UserMapper um;
 	
-	//private static String namespace;
 
 	public User_DTO read(int uid) throws Exception{
-		return session.getRead(uid);
+		return um.getRead(uid);
 	}
+	
 }

@@ -9,4 +9,5 @@ public class User_DTO {
 	String name;
 	String alias;
 	String password;
+	String enabled;
 }
