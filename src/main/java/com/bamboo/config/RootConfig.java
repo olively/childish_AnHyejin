@@ -21,8 +21,8 @@ public class RootConfig {
 	public DataSource dataSource() {
 		HikariConfig hikariConfig = new HikariConfig();
 		
-		hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
-		hikariConfig.setJdbcUrl("jdbc:mysql://13.124.201.44:51586");
+		hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		hikariConfig.setJdbcUrl("jdbc:mysql://13.124.201.44:57598/Bamboo");
 		hikariConfig.setUsername("root");
 		hikariConfig.setPassword("1234");
 		

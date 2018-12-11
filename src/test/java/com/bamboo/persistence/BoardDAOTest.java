@@ -15,19 +15,26 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.bamboo.config.RootConfig;
 import com.bamboo.config.ServletConfig;
 import com.bamboo.config.WebConfig;
+import com.bamboo.mapper.BoardMapper;
+
+import lombok.Setter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { RootConfig.class, ServletConfig.class, WebConfig.class })
+@ContextConfiguration(classes = { RootConfig.class})
 public class BoardDAOTest {
 
-	@Autowired
-	private BoardDAO dao;
+	@Setter(onMethod_ = @Autowired)
+	private BoardMapper boardMapper;
 	
-	private static Logger logger = logger = LoggerFactory.getLogger(BoardDAOTest.class);
+	private static Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 	
 	@Test
+	public void tttt() throws Exception {
+		logger.info(boardMapper.getClass().getName());
+	}
+	@Test
 	public void test() throws Exception {
-		logger.info(dao.read(1).toString());
+		logger.info(boardMapper.getRead(20183308).getName());
 	}
 
 }

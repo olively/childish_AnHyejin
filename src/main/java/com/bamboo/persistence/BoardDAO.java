@@ -4,6 +4,6 @@ import com.bamboo.domain.User_DTO;
 
 public interface BoardDAO {
 
-	public User_DTO read(Integer f_code)throws Exception;
+	public User_DTO read(int f_code)throws Exception;
 	
 }

@@ -12,14 +12,14 @@ import com.bamboo.mapper.BoardMapper;
 import lombok.Setter;
 
 @Repository
-public class BoardDAOImpl {
+public class BoardDAOImpl implements BoardDAO{
 	
-	@Autowired
+	@Setter(onMethod_ = @Autowired)
 	private BoardMapper session;
 	
 	//private static String namespace;
 
-	public User_DTO read(Integer f_code) throws Exception{
-		return session.read(1);
+	public User_DTO read(int uid) throws Exception{
+		return session.getRead(uid);
 	}
 }
