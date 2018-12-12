@@ -6,6 +6,7 @@ import com.bamboo.domain.Board_DTO;
 
 public interface BoardMapper {
 
-	public boolean Insert(Board_DTO dto)throws Exception;
+	public boolean insertBoard(Board_DTO dto)throws Exception;
 	public List<Board_DTO> getList();
+	public Board_DTO infoBoard()throws Exception;
 }

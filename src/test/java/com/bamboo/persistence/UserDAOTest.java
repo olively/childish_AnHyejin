@@ -37,7 +37,7 @@ public class UserDAOTest {
 		logger.info(usermapper.getRead(20183308).getName());
 	}
 	
-	
+	//회원등록을 하는 코드
 	@Test
 	public void testInsert() throws Exception{
 		User_DTO dto = new User_DTO();

@@ -20,6 +20,9 @@ import com.bamboo.config.RootConfig;
 import com.bamboo.domain.Board_DTO;
 import com.bamboo.mapper.BoardMapper;
 
+
+
+//글쓰기의 기능을 하는 테스트 코드
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { RootConfig.class})
 public class BoardDAOTest {
@@ -35,7 +38,6 @@ public class BoardDAOTest {
 		
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		
-		
 		Bdto.setF_uid("20183308");
 		Bdto.setTitle("aa");
 		Bdto.setContent("aaa");
@@ -44,16 +46,22 @@ public class BoardDAOTest {
 		Bdto.setReg_date(timeStamp);
 		
 		
-		if(bm.Insert(Bdto)) {
+		if(bm.insertBoard(Bdto)) {
 			logger.info("OK");
 		}
 	}
+	//글목록들을 불러오는 테스트 코드
 	@Test
 	public void testGetList() throws Exception{
 		
 		List<Board_DTO> list = bm.getList();
 		
 		logger.info(list.get(1).getReg_date());
+		
+	}
+	//글 only one
+	@Test
+	public void testOnlyList() throws Exception{
 		
 	}
 }

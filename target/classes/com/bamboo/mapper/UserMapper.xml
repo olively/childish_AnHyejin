@@ -12,7 +12,7 @@
 		select * from Bamboo_User where p_uid = #{p_uid}
 	</select>
 	
-	<insert id="Insert" parameterType="com.bamboo.domain.User_DTO">
+	<insert id="insertUser" parameterType="com.bamboo.domain.User_DTO">
 		Insert into Bamboo_User(p_uid, f_code, name, alias, password)
 		values(#{p_uid}, #{f_code}, #{name}, #{alias}, #{password})
 	</insert>

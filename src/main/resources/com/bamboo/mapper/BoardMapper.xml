@@ -9,9 +9,12 @@
 	 select * from FreeTalk_Board
 	 </select>
 	  
-	<insert id="Insert" parameterType="com.bamboo.domain.Board_DTO">
+	<insert id="insertBoard" parameterType="com.bamboo.domain.Board_DTO">
 		Insert into FreeTalk_Board(f_uid, title, content, view_count, like_count)
 		values(#{f_uid}, #{title}, #{content}, #{view_count}, #{like_count})
 	</insert>
 	  
+	  <select id="infoBoard" resultType="com.bamboo.domain.Board_DTO">
+	  select * from FreeTalk_Board p_bid = #{p_bid}
+	  </select>
   </mapper>
