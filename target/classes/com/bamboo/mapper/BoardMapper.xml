@@ -4,8 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.bamboo.mapper.BoardMapper">
   
+	 
+	 <select id="getList" resultType="com.bamboo.domain.Board_DTO">
+	 select * from FreeTalk_Board
+	 </select>
 	  
-	  
-
+	<insert id="Insert" parameterType="com.bamboo.domain.Board_DTO">
+		Insert into FreeTalk_Board(f_uid, title, content, view_count, like_count)
+		values(#{f_uid}, #{title}, #{content}, #{view_count}, #{like_count})
+	</insert>
 	  
   </mapper>

@@ -1,5 +1,8 @@
 package com.bamboo.persistence;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bamboo.config.RootConfig;
+import com.bamboo.domain.Board_DTO;
 import com.bamboo.domain.User_DTO;
 import com.bamboo.mapper.UserMapper;
 
@@ -42,7 +46,11 @@ public class UserDAOTest {
 		dto.setName("ahn");
 		dto.setAlias("chang");
 		dto.setPassword("ho");
-		usermapper.Insert(dto);
+		if (usermapper.Insert(dto)) {
+			logger.info("Success!!!!!!!!");
+		};
 	}
+	
+
 
 }

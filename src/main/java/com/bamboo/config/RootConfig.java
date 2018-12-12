@@ -22,7 +22,7 @@ public class RootConfig {
 		HikariConfig hikariConfig = new HikariConfig();
 		
 		hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		hikariConfig.setJdbcUrl("jdbc:mysql://13.209.255.93:52993/Bamboo");
+		hikariConfig.setJdbcUrl("jdbc:mysql://13.209.255.93:57628/Bamboo");
 		hikariConfig.setUsername("root");
 		hikariConfig.setPassword("1234");
 		
