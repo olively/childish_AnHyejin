@@ -56,12 +56,12 @@ public class BoardDAOTest {
 		
 		List<Board_DTO> list = bm.getList();
 		
-		logger.info(list.get(1).getReg_date());
+		logger.info(list.toString());
 		
 	}
 	//글 only one
 	@Test
 	public void testOnlyList() throws Exception{
-		
+		logger.info(bm.infoBoard(4).toString());
 	}
 }

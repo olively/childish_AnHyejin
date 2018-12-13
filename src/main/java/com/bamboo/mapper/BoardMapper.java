@@ -8,5 +8,6 @@ public interface BoardMapper {
 
 	public boolean insertBoard(Board_DTO dto)throws Exception;
 	public List<Board_DTO> getList();
-	public Board_DTO infoBoard()throws Exception;
+	public Board_DTO infoBoard(int p_bid) throws Exception;
+	
 }
