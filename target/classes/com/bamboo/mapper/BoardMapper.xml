@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.bamboo.mapper.BoardMapper">
+  
+	 
+	 <select id="getList" resultType="com.bamboo.domain.Board_DTO">
+	 select * from FreeTalk_Board 
+	 </select>
+	  
+	<insert id="insertBoard" parameterType="com.bamboo.domain.Board_DTO">
+		Insert into FreeTalk_Board(f_uid, title, content, view_count, like_count)
+		values(#{f_uid}, #{title}, #{content}, #{view_count}, #{like_count})
+	</insert>
+	  
+	  <select id="infoBoard" resultType="com.bamboo.domain.Board_DTO">
+	  select * from FreeTalk_Board where p_bid = #{p_bid}
+	  </select>
+  </mapper>
