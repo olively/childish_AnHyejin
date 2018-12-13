@@ -32,8 +32,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.roles("STUDENT");
 	}
 	
-	@Bean
-	public AuthenticationSuccessHandler loginSuccessHandler() {
-		return new CustomLoginSuccessHand
-	}
 }
