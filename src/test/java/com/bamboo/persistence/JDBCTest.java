@@ -10,7 +10,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class JDBCTest {
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://13.125.69.50:59610";
+	private static final String URL = "jdbc:mysql://13.209.255.93:52826/Bamboo";
 	private static final String USER = "root";
 	private static final String PW = "1234";
 	
