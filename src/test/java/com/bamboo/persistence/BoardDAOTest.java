@@ -62,6 +62,6 @@ public class BoardDAOTest {
 	//글 only one
 	@Test
 	public void testOnlyList() throws Exception{
-		logger.info(bm.infoBoard(4).toString());
+		logger.info(bm.infoBoard(5).toString());
 	}
 }
