@@ -51,7 +51,10 @@ $(document).ready(function() {
 		}, 200);
 
 	}).scroll();
-
+	
+	
+$("#freetalk").attr('class','nav-item active');
+		
 });
 </script>
 

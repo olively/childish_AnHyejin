@@ -1,5 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -58,10 +58,6 @@
 	text-transform: uppercase;
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
-$(document).ready(function(){
-	$("#freetalk").attr('class', 'nav-item active');
-})
-
 </style>
 
 <!-- $(document).ready(function(){
@@ -69,6 +65,74 @@ $(document).ready(function(){
 	$('#dept_talk').prop()
 }) -->
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	//console.log("A");
+	$("#introduce").on('click', function(){
+		$("#introduce").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#freetalk").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+
+		//console.log("a");
+	})
+	
+	$("#freetalk").on('click', function(){
+		$("#freetalk").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#depttalk").on('click', function(){
+		$("#depttalk").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+
+	})
+	
+	$("#gallery").on('click', function(){
+		$("#gallery").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#QnA").on('click', function(){
+		$("#QnA").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#notice").on('click', function(){
+		$("#notice").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+	})
+});
+</script>
 
 </head>
 
@@ -76,8 +140,8 @@ $(document).ready(function(){
 
 	<!-- Header -->
 	<jsp:include page="/WEB-INF/views/header.jsp" flush="true" />
-	
-	
+
+
 
 	<!-- Page Content -->
 	<div class="container" id="post">
@@ -103,9 +167,9 @@ $(document).ready(function(){
 				<hr>
 
 				<!-- Preview Image -->
-				<img class="img-fluid rounded" src="http://placehold.it/900x300"
+				<!--  <img class="img-fluid rounded" src="http://placehold.it/900x300"
 					alt="">
-
+				-->
 				<hr>
 
 				<!-- Post Content -->
@@ -162,8 +226,8 @@ $(document).ready(function(){
 						<div class="card-header" role="tab" id="headingTwo">
 							<h5 class="mb-0">
 								<a class="collapsed" data-toggle="collapse" href="#collapseTwo"
-									aria-expanded="false" aria-controls="collapseTwo">
-									Comments </a>
+									aria-expanded="false" aria-controls="collapseTwo"> Comments
+								</a>
 							</h5>
 						</div>
 						<div id="collapseTwo" class="collapse" role="tabpanel"
@@ -224,10 +288,11 @@ $(document).ready(function(){
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
-					<br><br>
+					<br>
+					<br>
 				</div>
 			</div>
 
