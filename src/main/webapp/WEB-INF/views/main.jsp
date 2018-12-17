@@ -242,7 +242,7 @@
                     Category
                   </div>
                   <div class="project-name">
-                    	자유 Talk
+                    	<a href="/login">자유 Talk</a>
                   </div>
                 </div>
               </div>

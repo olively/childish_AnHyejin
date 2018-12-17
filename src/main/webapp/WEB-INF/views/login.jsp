@@ -153,15 +153,15 @@
 		<div class="row">
 			<div class="col-md-4 login-sec">
 				<h2 class="text-center">Login Now</h2>
-				<form class="login-form">
+				<form class="login-form" action="/login_processing" method="POST">
 					<div class="form-group">
 						<label for="exampleInputEmail1" class="text-uppercase">Username</label>
-						<input type="text" class="form-control" placeholder="">
+						<input type="text" class="form-control" name="userid">
 
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1" class="text-uppercase">Password</label>
-						<input type="password" class="form-control" placeholder="">
+						<input type="password" class="form-control" name="password">
 					</div>
 
 
@@ -171,12 +171,12 @@
 						</label>
 						<button type="submit" class="btn btn-login float-right">Submit</button>
 					</div>
-
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				</form>
 				
 				<div class="copy-text">
 				
-					<a href="#" class="signup">Are you not member yet?</a>
+					<a href="${pageContext.request.contextPath}/signup" class="signup">Are you not member yet?</a>
 					<br><br>
 					Created with <i class="fa fa-heart"></i> by <a
 						href="#">kyungmin_bamboo.com</a>

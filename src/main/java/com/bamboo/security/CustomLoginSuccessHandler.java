@@ -22,13 +22,12 @@ AuthenticationSuccessHandler{
 			Authentication auth)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		log.warn("Login Success");
 		List<String> roleNames = new ArrayList<>();
 		auth.getAuthorities().forEach(authority ->{
 			roleNames.add(authority.getAuthority());
 		});
 		log.warn("ROLE NAMES: " + roleNames);
-		if(roleNames.contains("ROLE_STUDENT")) {
+		if(roleNames.contains("ADMIN")) {
 			response.sendRedirect("");
 		}
 	}
