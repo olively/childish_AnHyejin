@@ -1,5 +1,10 @@
 package com.bamboo.service;
 
-public interface Board_Service {
+import java.util.List;
 
+public interface Board_Service<T> {
+
+	public List<T> getList();
+	public T getRead();
+	public boolean write();
 }
