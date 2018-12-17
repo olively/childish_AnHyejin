@@ -8,6 +8,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -18,7 +20,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bamboo.config.RootConfig;
 import com.bamboo.domain.Board_DTO;
+import com.bamboo.domain.Test_DTO;
 import com.bamboo.mapper.BoardMapper;
+import com.bamboo.mapper.TestMapper;
 
 
 
@@ -30,6 +34,11 @@ public class BoardDAOTest {
 	@Autowired
 	BoardMapper bm;
 	
+	@Autowired
+	TestMapper tm;
+	
+	@Inject
+	private BoardDAO dao;
 	private static Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 	
 	@Test
@@ -63,5 +72,16 @@ public class BoardDAOTest {
 	@Test
 	public void testOnlyList() throws Exception{
 		logger.info(bm.infoBoard(4).toString());
+	}
+	
+	//페이징 처리
+	@Test
+	public void testListPage() throws Exception{
+		int page = 3;
+		List<Test_DTO> list = dao.listPage(page);
+		
+		for(Test_DTO test_DTO : list) {
+			logger.info(test_DTO.getId() + ":" + test_DTO.getBtitle());;
+		}
 	}
 }
