@@ -43,12 +43,7 @@
 }
 
 @media ( min-width : 576px) .col-sm-3 {
-	flex
-	:
-	 
-	0
-	0
-	25%;
+	flex:0 0 25%;
 }
 </style>
 <body>
