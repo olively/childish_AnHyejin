@@ -216,7 +216,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<textarea class="form-control" rows="3"></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button style="float:right;" type="submit" class="btn btn-primary">Submit</button>
 						</form>
 					</div>
 				</div>

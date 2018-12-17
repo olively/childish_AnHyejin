@@ -297,9 +297,10 @@ small {
               You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
             </div>
           </div> -->
-				<button style="float:right;" type="button" id="btnwrite"
+				 <a href="/main/write">
+				 <button style="float:right;" type="button" id="btnwrite"
 					class="btn btn-success">
-					<i class="fas fa-pencil-alt"> writing</i></button>
+					<i class="fas fa-pencil-alt"> writing</i></button></a>
 			</div>
 		</div>
 		<!-- /.row -->
