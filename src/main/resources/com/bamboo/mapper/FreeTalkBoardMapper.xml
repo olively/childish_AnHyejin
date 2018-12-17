@@ -5,11 +5,11 @@
   
   
 <mapper namespace="com.bamboo.mapper.FreeTalkBoardMapper">
-	<select id="getList" resultType="com.bamboo.domain.FreeTalk_Board_VO">
+	<select id="getList" resultType="com.bamboo.domain.FreeTalkBoard_VO">
 		SELECT * FROM FreeTalk_Board
 	</select>
 	
-	<select id="getRead" resultType="com.bamboo.domain.FreeTalk_Board_VO">
+	<select id="getRead" resultType="com.bamboo.domain.FreeTalkBoard_VO">
 		SELECT * FROM FreeTalk_Board WHERE p_bid = #{p_bid}
 	</select>
 	
