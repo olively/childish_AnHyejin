@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <head>
 <style>
 .well {
@@ -34,7 +36,7 @@ body {
 </head>
 <!------ Include the above in your HEAD tag ---------->
 
-<form action="#" name="myForm" method="post"
+<form action="signup_processing" name="myForm" method="post"
 	onsubmit="return(validate());">
 	<div class="container-fluid">
 		<div class="row">
@@ -52,7 +54,7 @@ body {
 								<div class="input-group-addon">
 									<i class="glyphicon glyphicon-tags"></i>
 								</div>
-								<input type="text" placeholder="class of" name="txtclassof"
+								<input type="text" placeholder="class of" name="p_uid"
 									class="form-control">
 
 							</div>
@@ -68,16 +70,11 @@ body {
 								<div class="input-group-addon">
 									<i class="glyphicon glyphicon-pencil"></i>
 								</div>
-								<select class="form-control">
+								<select name="f_code"class="form-control">
 									<option>Please select..</option>
-									<option>융합소프트웨어과</option>
-									<option>정보통신과</option>
-									<option>IT경영과</option>
-									<option>게임콘텐츠과</option>
-									<option>공간디자인과</option>
-									<option>건축과</option>
-									<option>소방안전관리과</option>
-									<option>영상콘텐츠과</option>
+									<c:forEach var="list" items="${department}" varStatus="status">
+									<option value="${list.p_code}">${list.name}</option>
+									</c:forEach>
 								</select>
 							</div>
 						</div>
@@ -92,7 +89,7 @@ body {
 								<div class="input-group-addon">
 									<i class="glyphicon glyphicon-user"></i>
 								</div>
-								<input type="text" placeholder="name" name="txtname"
+								<input type="text" placeholder="name" name="name"
 									class="form-control">
 							</div>
 						</div>
@@ -107,7 +104,7 @@ body {
 								<div class="input-group-addon">
 									<i class="glyphicon glyphicon-user"></i>
 								</div>
-								<input type="text" placeholder="alias" name="txtalias"
+								<input type="text" placeholder="alias" name="alias"
 									class="form-control">
 							</div>
 						</div>
@@ -123,7 +120,7 @@ body {
 									<i class="glyphicon glyphicon-lock"></i>
 								</div>
 								<input type="password" minlength="8" maxlength="20"
-									placeholder="Password" name="txtpass" class="form-control">
+									placeholder="Password" name="password" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -137,6 +134,6 @@ body {
 			</div>
 		</div>
 	</div>
-
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
 </form>

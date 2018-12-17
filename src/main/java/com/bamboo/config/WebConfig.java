@@ -1,5 +1,7 @@
 package com.bamboo.config;
 
+import javax.servlet.Filter;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer{
@@ -21,5 +23,14 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		// TODO Auto-generated method stub
 		return new String[] {"/"};
 	}
-
+	
+	/*@Override
+	protected Filter[] getServletFilters() {
+		// TODO Auto-generated method stub
+		CharacterEncodingFilter characterEncodingFilter =
+				new CharacterEncodingFilter();
+		characterEncodingFilter.setEncoding("utf-8");
+		characterEncodingFilter.setForceEncoding(true);
+		return new Filter[] { characterEncodingFilter };
+	}*/
 }

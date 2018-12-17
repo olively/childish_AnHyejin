@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -13,14 +14,15 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @MapperScan(basePackages = {"com.bamboo.mapper"})
+@ComponentScan(basePackages = {"com.bamboo.service"})
 public class RootConfig {
 
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig hikariConfig = new HikariConfig();
 		
-		hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
-		hikariConfig.setJdbcUrl("jdbc:mysql://13.125.69.50:59610");
+		hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		hikariConfig.setJdbcUrl("jdbc:mysql://13.124.195.10:53884/Bamboo?useUnicode=true&characterEncoding=utf8");
 		hikariConfig.setUsername("root");
 		hikariConfig.setPassword("1234");
 		
