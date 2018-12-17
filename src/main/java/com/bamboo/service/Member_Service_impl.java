@@ -27,12 +27,6 @@ public class Member_Service_impl implements Member_Service {
 	}
 
 	@Override
-	public boolean signIn() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public boolean checkMember() {
 		// TODO Auto-generated method stub
 		return false;
