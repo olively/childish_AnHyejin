@@ -234,7 +234,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/2.jpg">
+            <a class="portfolio-box" href="/main/freetalk">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/2.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -264,7 +264,7 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/4.jpg">
+            <a class="portfolio-box" href="/main/gallery">
               <img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/4.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
@@ -388,10 +388,10 @@
     <!-- Plugin JavaScript -->
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
+   <!--   <script src="${pageContext.request.contextPath}/resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+ -->
     <!-- Custom scripts for this template -->
-    <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
+      <script src="${pageContext.request.contextPath}/resources/js/creative.min.js"></script>
 
   </body>
 
