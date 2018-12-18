@@ -1,5 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -58,16 +58,7 @@
 	text-transform: uppercase;
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
-$(document).ready(function(){
-	$("#freetalk").attr('class', 'nav-item active');
-})
-
 </style>
-
-<!-- $(document).ready(function(){
-
-	$('#dept_talk').prop()
-}) -->
 
 
 </head>
@@ -76,8 +67,8 @@ $(document).ready(function(){
 
 	<!-- Header -->
 	<jsp:include page="/WEB-INF/views/header.jsp" flush="true" />
-	
-	
+
+
 
 	<!-- Page Content -->
 	<div class="container" id="post">
@@ -103,9 +94,9 @@ $(document).ready(function(){
 				<hr>
 
 				<!-- Preview Image -->
-				<img class="img-fluid rounded" src="http://placehold.it/900x300"
+				<!--  <img class="img-fluid rounded" src="http://placehold.it/900x300"
 					alt="">
-
+				-->
 				<hr>
 
 				<!-- Post Content -->
@@ -152,7 +143,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<textarea class="form-control" rows="3"></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button style="float:right;" type="submit" class="btn btn-primary">Submit</button>
 						</form>
 					</div>
 				</div>
@@ -162,8 +153,8 @@ $(document).ready(function(){
 						<div class="card-header" role="tab" id="headingTwo">
 							<h5 class="mb-0">
 								<a class="collapsed" data-toggle="collapse" href="#collapseTwo"
-									aria-expanded="false" aria-controls="collapseTwo">
-									Comments </a>
+									aria-expanded="false" aria-controls="collapseTwo"> Comments
+								</a>
 							</h5>
 						</div>
 						<div id="collapseTwo" class="collapse" role="tabpanel"
@@ -224,10 +215,11 @@ $(document).ready(function(){
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
-					<br><br>
+					<br>
+					<br>
 				</div>
 			</div>
 

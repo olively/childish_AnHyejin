@@ -1,3 +1,73 @@
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	//console.log("A");
+	$("#introduce").on('click', function(){
+		$("#introduce").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#freetalk").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+
+		//console.log("a");
+	})
+	
+	$("#freetalk").on('click', function(){
+		$("#freetalk").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#depttalk").on('click', function(){
+		$("#depttalk").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+
+	})
+	
+	$("#gallery").on('click', function(){
+		$("#gallery").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#QnA").on('click', function(){
+		$("#QnA").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#notice").on('click', function(){
+		$("#notice").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+	})
+});
+</script>
+ 
+ 
  <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -7,24 +77,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item 1" id="introduce" name="introduce">
               <a class="nav-link" href="#">Introduce</a>
             </li>
-            <li class="nav-item" id="freetalk">
+            <li class="nav-item 2" id="freetalk" name="freetalk">
               <a class="nav-link" href="#">FreeTalk
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-           <li class="nav-item" id="depttalk">
+           <li class="nav-item 3" id="depttalk" name="depttalk">
               <a class="nav-link" href="#">Dept Talk</a>
             </li>
-            <li class="nav-item " id="gallery">
+            <li class="nav-item 4" id="gallery" name="gallery">
               <a class="nav-link" href="#">Gallery</a>
             </li>
-            <li class="nav-item" id="QnA">
+            <li class="nav-item 5" id="QnA" name="QnA">
               <a class="nav-link" href="#">QnA</a>
             </li>
-            <li class="nav-item" id="notice">
+            <li class="nav-item 6" id="notice" name="notice">
               <a class="nav-link" href="#">Notice</a>
             </li>
           </ul>
