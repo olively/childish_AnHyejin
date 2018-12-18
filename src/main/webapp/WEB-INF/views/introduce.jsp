@@ -69,6 +69,16 @@
 	$(document).ready(function() {
 
 		$("#introduce").attr('class', 'nav-item active');
+		
+		$("#QnA").on('click', function(){
+			$("#QnA").attr('class','nav-item active');
+		//----------------------------------------------------	
+			$("#introduce").attr('class','nav-item');
+			$("#depttalk").attr('class','nav-item');
+			$("#gallery").attr('class','nav-item');
+			$("#freetalk").attr('class','nav-item');
+			$("#notice").attr('class','nav-item');
+		})
 
 	});
 </script>
@@ -95,12 +105,10 @@
 			<div class="col-lg-3">
 				<h1 class="my-4"></h1>
 				<div class="list-group">
-					<a href="#1" class="list-group-item active">인사말</a> <a href="#2"
-						class="list-group-item">대학 현황</a> <a href="#3"
-						class="list-group-item">경민 소개</a> <a href="#4"
-						class="list-group-item">캠퍼스 안내</a>
+					<a href="#greeting" class="list-group-item active">인사말</a> <a
+						href="#campus" class="list-group-item">캠퍼스 소개</a>
 				</div>
-
+				<!-- ./list-group -->
 
 
 				<h2 class="mt-4">Contact Us</h2>
@@ -112,79 +120,52 @@
 					<abbr title="Phone">P:</abbr> (123) 456-7890 <br> <abbr
 						title="Email">E:</abbr> <a href="mailto:#">kyungminbamboo@example.com</a>
 				</address>
-
+				<!-- ./cantact us -->
 			</div>
 
 
 			<!-- /.col-lg-3 -->
 
-			<div class="col-lg-9">
-
-				<div class="col-sm-9" id="1">
-				<h2 class="mt-4">
-							<strong>총장 인사말</strong>
-						</h2>
-					<div class="card mt-4">
-						<img class="mx-auto" height="1000px" width="700px" src="/resources/img/aa.jpg" alt="">
-
-					</div>
-
-					<!-- <div class="col-sm-9" id="2">
-
+			<!-- <div class="col-lg">
+				<div class="col-sm" id="greeting">
 					<h2 class="mt-4">
-							<strong>총장 인사말</strong>
-						</h2>
+						<strong>총장 인사말</strong>
+					</h2>
 					<div class="card mt-4">
-					
-						<img class="card-img-top img-fluid"
-							src="http://placehold.it/900x400" alt="">
-						<div class="card-body">
-							<h3 class="card-title">Product Name</h3>
-							<h4>$24.99</h4>
-							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque
-								facere, soluta. Totam id dolores, sint aperiam sequi pariatur
-								praesentium animi perspiciatis molestias iure, ducimus!</p>
-							<span class="text-warning">&#9733; &#9733; &#9733; &#9733;
-								&#9734;</span> 4.0 stars
-						</div>
+						<img class="mx-auto" height="900px" width="700px"
+							src="/resources/img/hi.PNG" alt="">
 
 					</div>
-				
-				<div class="col-sm-9" id="3">
-
-					<h2 class="mt-4">What We Do</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-						deserunt neque tempore recusandae animi soluta quasi? Asperiores
-						rem dolore eaque vel, porro, soluta unde debitis aliquam
-						laboriosam. Repellat explicabo, maiores!</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Omnis optio neque consectetur consequatur magni in nisi, natus
-						beatae quidem quam odit commodi ducimus totam eum, alias, adipisci
-						nesciunt voluptate. Voluptatum.</p>
 
 				</div>
- -->
-
+			</div> -->
+				<!-- /. greeting  -->
+			<div class="col-lg-9">
+			 	<div class="col-sm" id="campus">
+					<h2 class="mt-4">
+						<strong>캠퍼스 소개</strong>
+					</h2>
+					<div class="card mt-4">
+						<img class="mx-auto" height="2000px" width="750px"
+							src="/resources/img/campus.png" alt="">
+					</div>
 				</div>
-				<!-- /.col-lg-9 -->
-
+		</div>
+				<!-- ./campus -->
 			</div>
 
 		</div>
-	</div>
-<div style="height:100px;">
-</div>
-		<!-- /.container -->
+	<div style="height: 100px;"></div>
+	<!-- /.container -->
 
-		<!-- Footer -->
-		<jsp:include page="/WEB-INF/views/footer.jsp" flush="true" />
+	<!-- Footer -->
+	<jsp:include page="/WEB-INF/views/footer.jsp" flush="true" />
 
-		<!-- Bootstrap core JavaScript -->
-		<script
-			src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-		<script
-			src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script
+		src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
