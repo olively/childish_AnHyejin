@@ -24,7 +24,7 @@ public class FreeTalk_Board_Service implements Board_Service<FreeTalkBoard_VO> {
 	@Override
 	public List<FreeTalkBoard_VO> getNewestList(int pnum) {
 		// TODO Auto-generated method stub
-		
+		pnum = (pnum - 1) * 10;
 		List<FreeTalkBoard_VO> newestBoardList = boardMapper.getNewestList(pnum);
 		
 		for (FreeTalkBoard_VO vo : newestBoardList) {

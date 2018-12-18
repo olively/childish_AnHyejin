@@ -19,7 +19,7 @@
 	</select>
 	
 	<insert id="write">
-		INSERT INTO FreeTalk_Board (f_uid, title, content)
-		VALUES (#{f_uid}, #{title}, #{content})
+		INSERT INTO FreeTalk_Board (f_uid, title, content, writer)
+		VALUES (#{f_uid}, #{title}, #{content}, #{writer})
 	</insert>
 </mapper>
