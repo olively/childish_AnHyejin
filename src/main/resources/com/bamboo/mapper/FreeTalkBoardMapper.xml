@@ -5,8 +5,13 @@
   
   
 <mapper namespace="com.bamboo.mapper.FreeTalkBoardMapper">
-	<select id="getList" resultType="com.bamboo.domain.FreeTalkBoard_VO">
+	<select id="getRowCount" resultType="Integer">
+		SELECT COUNT(*) FROM FreeTalk_Board;
+	</select>
+	
+	<select id="getNewestList" resultType="com.bamboo.domain.FreeTalkBoard_VO">
 		SELECT * FROM FreeTalk_Board
+		ORDER BY reg_date DESC, p_bid DESC LIMIT #{pnum}, 10;
 	</select>
 	
 	<select id="getRead" resultType="com.bamboo.domain.FreeTalkBoard_VO">

@@ -6,18 +6,19 @@ import java.util.Locale;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/main/*")
 public class MainController {
 	
 	//free talk
-	@RequestMapping(value = "/freetalk", method = RequestMethod.GET)
-	public String freetalk(Locale locale, Model model) {
-		
-		
+	@GetMapping("/freetalk")
+	public String freetalk(@RequestParam(defaultValue="1") int pnum) {
+		System.out.println(pnum);
 		return "freetalk";
 	}
 	
