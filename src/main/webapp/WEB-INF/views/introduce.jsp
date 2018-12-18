@@ -70,14 +70,26 @@
 
 		$("#introduce").attr('class', 'nav-item active');
 		
-		$("#QnA").on('click', function(){
-			$("#QnA").attr('class','nav-item active');
+		$("#greeting").css('display','');
+		$("#campus").css('display','none');
+		
+		
+		$("#greeting_menu").on('click', function(){
+			$("#greeting_menu").attr('class','list-group-item active');
 		//----------------------------------------------------	
-			$("#introduce").attr('class','nav-item');
-			$("#depttalk").attr('class','nav-item');
-			$("#gallery").attr('class','nav-item');
-			$("#freetalk").attr('class','nav-item');
-			$("#notice").attr('class','nav-item');
+			$("#campus_menu").attr('class','list-group-item');
+		//----------------------------------------------------
+			$("#greeting").css('display','');
+			$("#campus").css('display','none');
+		})
+		
+		$("#campus_menu").on('click', function(){
+			$("#campus_menu").attr('class','list-group-item active');
+		//----------------------------------------------------	
+			$("#greeting_menu").attr('class','list-group-item');
+		//----------------------------------------------------
+			$("#campus").css('display','');
+			$("#greeting").css('display','none');
 		})
 
 	});
@@ -105,8 +117,8 @@
 			<div class="col-lg-3">
 				<h1 class="my-4"></h1>
 				<div class="list-group">
-					<a href="#greeting" class="list-group-item active">인사말</a> <a
-						href="#campus" class="list-group-item">캠퍼스 소개</a>
+					<a href="#" class="list-group-item active" id="greeting_menu">인사말</a> 
+					<a href="#" class="list-group-item" id="campus_menu">캠퍼스 소개</a>
 				</div>
 				<!-- ./list-group -->
 
@@ -126,8 +138,8 @@
 
 			<!-- /.col-lg-3 -->
 
-			<!-- <div class="col-lg">
-				<div class="col-sm" id="greeting">
+			 <div class="col-lg" id="greeting">
+				<div class="col-sm" >
 					<h2 class="mt-4">
 						<strong>총장 인사말</strong>
 					</h2>
@@ -138,10 +150,10 @@
 					</div>
 
 				</div>
-			</div> -->
+			</div> 
 				<!-- /. greeting  -->
-			<div class="col-lg-9">
-			 	<div class="col-sm" id="campus">
+			<div class="col-lg-9" id="campus">
+			 	<div class="col-sm" >
 					<h2 class="mt-4">
 						<strong>캠퍼스 소개</strong>
 					</h2>
