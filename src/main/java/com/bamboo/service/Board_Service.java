@@ -4,7 +4,8 @@ import java.util.List;
 
 public interface Board_Service<T> {
 
-	public List<T> getList();
-	public T getRead();
-	public boolean write();
+	public int getRowCount();
+	public List<T> getNewestList(int pnum);
+	public T getRead(int p_bid);
+	public boolean write(T vo);
 }
