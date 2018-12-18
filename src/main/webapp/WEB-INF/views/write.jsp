@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,8 +91,6 @@ $(document).ready(function(){
 		$("#freetalk").attr('class','nav-item');
 	})
 	//-----------------------------------------------------
-		
-
 });
 </script>
 </head>
@@ -124,56 +125,21 @@ $(document).ready(function(){
 <body>
 
    <!-- Header -->
-   <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item 1" id="introduce" name="introduce">
-              <a class="nav-link" href="#">Introduce</a>
-            </li>
-            <li class="nav-item 2" id="freetalk" name="freetalk">
-              <a class="nav-link" href="#">FreeTalk
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-           <li class="nav-item 3" id="depttalk" name="depttalk">
-              <a class="nav-link" href="#">Dept Talk</a>
-            </li>
-            <li class="nav-item 4" id="gallery" name="gallery">
-              <a class="nav-link" href="#">Gallery</a>
-            </li>
-            <li class="nav-item 5" id="QnA" name="QnA">
-              <a class="nav-link" href="#">QnA</a>
-            </li>
-            <li class="nav-item 6" id="notice" name="notice">
-              <a class="nav-link" href="#">Notice</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-   <div>
-      <br> <br> <br>
-   </div>
+   <jsp:include page="/WEB-INF/views/header.jsp" flush="true" />
 
    <!-- Page Content -->
-   <form class="form-horizontal">
+   <form class="form-horizontal" action="/main/write_processing" method="post">
       <div class="container" id="write">
 
          <!-- title -->
          <div class="form-group">
             <strong><label for="inputTitle" >Title</label>   </strong>      
-               <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+               <input type="text" class="form-control" id="inputTitle" placeholder="Title" name="title">
          </div>
          
          <!-- summernote : content -->
          <strong><label for="inputTitle" >Content</label></strong>
-         <div id="summernote"></div>
+         <textarea name="content" id="summernote"></textarea>
          <script>
             $('#summernote').summernote({
                placeholder : 'Write content..',
@@ -184,20 +150,15 @@ $(document).ready(function(){
 
          <div style="text-align: center;">
             <br>
-            <button type="button" class="btn btn-success" >
+            <button type="submit" class="btn btn-success" >
             	<i class="fas fa-check"> Commit</i></button>
          </div>
       </div>
-
-
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
    </form>
+   
    <!-- Footer -->
-    <footer class="py-5 bg-dark" id="footer">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Kyungmin Bamboo 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+   <jsp:include page="/WEB-INF/views/footer.jsp" flush="true" />
   
 
 </body>

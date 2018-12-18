@@ -67,7 +67,7 @@ $("#freetalk").attr('class','nav-item active');
 
 #btnwrite{
 	left:7%;
-	top:40%;
+	top:20%;
 	position:absolute;
 }
 

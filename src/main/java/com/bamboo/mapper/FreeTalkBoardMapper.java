@@ -9,5 +9,5 @@ public interface FreeTalkBoardMapper {
 	public int getRowCount();
 	public List<FreeTalkBoard_VO> getNewestList(int pnum);
 	public FreeTalkBoard_VO getRead(int p_bid);
-	public boolean write(FreeTalkBoard_VO vo);
+	public int write(FreeTalkBoard_VO vo);
 }

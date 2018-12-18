@@ -28,9 +28,9 @@ public class Gallery_Board_Service implements Board_Service<FreeTalkBoard_VO> {
 	}
 
 	@Override
-	public boolean write(FreeTalkBoard_VO vo) {
+	public int write(FreeTalkBoard_VO vo) {
 		// TODO Auto-generated method stub
-		return false;
+		return 0;
 	}
 
 }

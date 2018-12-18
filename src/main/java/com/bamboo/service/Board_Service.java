@@ -7,5 +7,5 @@ public interface Board_Service<T> {
 	public int getRowCount();
 	public List<T> getNewestList(int pnum);
 	public T getRead(int p_bid);
-	public boolean write(T vo);
+	public int write(T vo);
 }

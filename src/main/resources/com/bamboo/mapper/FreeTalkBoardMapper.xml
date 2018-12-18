@@ -18,7 +18,7 @@
 		SELECT * FROM FreeTalk_Board WHERE p_bid = #{p_bid}
 	</select>
 	
-	<insert id="write">
+	<insert id="write" keyProperty="p_bid" useGeneratedKeys="true">
 		INSERT INTO FreeTalk_Board (f_uid, title, content, writer)
 		VALUES (#{f_uid}, #{title}, #{content}, #{writer})
 	</insert>

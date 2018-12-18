@@ -42,9 +42,10 @@ public class FreeTalkBoardTest {
 	public void insertTest() {
 		FreeTalkBoard_VO vo = new FreeTalkBoard_VO();
 		vo.setF_uid("20183308");
-		vo.setTitle("테스트 제목입니다.");
-		vo.setContent("동해물과 백두산이 마르고 닮도록\n하나님이 보우하사 우리나라 만세\n 무궁화 삼천리 화려강산\n대한 사람 대한으로 길이보전하세.");
+		vo.setTitle("테스트테스트");
+		vo.setContent("테스트asdjfnaslvnjakergkjahbfvkjbavsh");
 		vo.setWriter("leafy");
 		boardMapper.write(vo);
+		System.out.println(vo.getP_bid());
 	}
 }

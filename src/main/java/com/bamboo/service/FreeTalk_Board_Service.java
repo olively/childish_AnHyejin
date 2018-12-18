@@ -30,6 +30,7 @@ public class FreeTalk_Board_Service implements Board_Service<FreeTalkBoard_VO> {
 		for (FreeTalkBoard_VO vo : newestBoardList) {
 			if (vo.getContent().length() > 30) {
 				vo.setContent(vo.getContent().substring(0, 30) + "...");
+				System.out.println(vo.getContent());
 			}
 		}
 		
@@ -43,8 +44,9 @@ public class FreeTalk_Board_Service implements Board_Service<FreeTalkBoard_VO> {
 	}
 
 	@Override
-	public boolean write(FreeTalkBoard_VO vo) {
+	public int write(FreeTalkBoard_VO vo) {
 		// TODO Auto-generated method stub
-		return boardMapper.write(vo);
+		boardMapper.write(vo);
+		return vo.getP_bid();
 	}
 }
