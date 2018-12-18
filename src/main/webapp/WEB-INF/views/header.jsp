@@ -1,3 +1,73 @@
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	//console.log("A");
+	$("#introduce").on('click', function(){
+		$("#introduce").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#freetalk").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+
+		//console.log("a");
+	})
+	
+	$("#freetalk").on('click', function(){
+		$("#freetalk").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#depttalk").on('click', function(){
+		$("#depttalk").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+
+	})
+	
+	$("#gallery").on('click', function(){
+		$("#gallery").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#QnA").on('click', function(){
+		$("#QnA").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+		$("#notice").attr('class','nav-item');
+	})
+	
+	$("#notice").on('click', function(){
+		$("#notice").attr('class','nav-item active');
+	//----------------------------------------------------	
+		$("#introduce").attr('class','nav-item');
+		$("#depttalk").attr('class','nav-item');
+		$("#gallery").attr('class','nav-item');
+		$("#QnA").attr('class','nav-item');
+		$("#freetalk").attr('class','nav-item');
+	})
+});
+</script>
+ 
+ 
  <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
