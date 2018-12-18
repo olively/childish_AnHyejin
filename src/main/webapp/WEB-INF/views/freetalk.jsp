@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -118,10 +119,8 @@ small {
 				</h1>
 
 				<!-- Blog Post -->
-
-
-				<div class="card mb-4">
-					<!--  <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
+				<!-- <div class="card mb-4">
+					 <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
 					<div class="card-body">
 						<h2 class="card-title">Post Title</h2>
 						<p class="card-text">Lorem ipsum dolor sit amet, consectetur
@@ -133,55 +132,7 @@ small {
 					<div class="card-footer text-muted">
 						Posted on January 1, 2017 by <a href="post">Start Bootstrap</a>
 					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="card mb-4">
-					<!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
-					<div class="card-body">
-						<h2 class="card-title">Post Title</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex
-							quis soluta, a laboriosam. Dicta expedita corporis animi vero
-							voluptate voluptatibus possimus, veniam magni quis!</p>
-						<a href="post" class="btn btn-primary">Read More &rarr;</a>
-					</div>
-					<div class="card-footer text-muted">
-						Posted on January 1, 2017 by <a href="#">Start Bootstrap</a>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="card mb-4">
-					<!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
-					<div class="card-body">
-						<h2 class="card-title">Post Title</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex
-							quis soluta, a laboriosam. Dicta expedita corporis animi vero
-							voluptate voluptatibus possimus, veniam magni quis!</p>
-						<a href="post" class="btn btn-primary">Read More &rarr;</a>
-					</div>
-					<div class="card-footer text-muted">
-						Posted on January 1, 2017 by <a href="#">Start Bootstrap</a>
-					</div>
-				</div>
-
-				<!-- Blog Post -->
-				<div class="card mb-4">
-					<!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
-					<div class="card-body">
-						<h2 class="card-title">Post Title</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex
-							quis soluta, a laboriosam. Dicta expedita corporis animi vero
-							voluptate voluptatibus possimus, veniam magni quis!</p>
-						<a href="post" class="btn btn-primary">Read More &rarr;</a>
-					</div>
-					<div class="card-footer text-muted">
-						Posted on January 1, 2017 by <a href="#">Start Bootstrap</a>
-					</div>
-				</div>
+				</div> -->
 
 				<!-- Blog Post -->
 				<div class="card mb-4">
@@ -201,27 +152,28 @@ small {
 				</div>
 
 
-
-
-
-
 				<!-- Pagination -->
 				<div style="text-align: center;">
 					<nav aria-label="Page navigation example">
 						<ul class="pagination">
-							<li class="page-item"><a class="page-link" href="#"
+							<c:if test="${pageMaker.prev}">
+							<li class="page-item"><a class="page-link" href="/main/freetalk?pnum=${pageMaker.startPage - 1}"
 								aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 									<span class="sr-only">Previous</span>
 							</a></li>
+							</c:if>
+							
+							<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMarker.endPage}">
 							<li class="page-item"><a class="page-link" href="#">1</a></li>
-							<li class="page-item"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">4</a></li>
-							<li class="page-item"><a class="page-link" href="#">5</a></li>
-							<li class="page-item"><a class="page-link" href="#"
+							</c:forEach>
+							
+							<c:if test="${pageMaker.next}">
+							<li class="page-item"><a class="page-link" href="/main/freetalk?pnum=${pageMaker.endPage + 1}"
 								aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
 									class="sr-only">Next</span>
 							</a></li>
+							</c:if>
+							
 						</ul>
 					</nav>
 				</div>

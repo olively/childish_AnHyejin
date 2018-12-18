@@ -28,7 +28,9 @@ public class FreeTalk_Board_Service implements Board_Service<FreeTalkBoard_VO> {
 		List<FreeTalkBoard_VO> newestBoardList = boardMapper.getNewestList(pnum);
 		
 		for (FreeTalkBoard_VO vo : newestBoardList) {
-			vo.setContent(vo.getContent().substring(0, 30));
+			if (vo.getContent().length() > 30) {
+				vo.setContent(vo.getContent().substring(0, 30) + "...");
+			}
 		}
 		
 		return newestBoardList;
