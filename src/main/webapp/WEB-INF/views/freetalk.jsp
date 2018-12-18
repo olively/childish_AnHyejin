@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Kyungmin Bamboo - freetalk</title>
+<title>Kyungmin Bamboo - Freetalk</title>
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"

@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Kyungmin Bamboo - post</title>
+<title>Kyungmin Bamboo - Post</title>
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"
@@ -57,6 +57,11 @@
 	font-size: .9rem;
 	text-transform: uppercase;
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+#footer {
+	margin-top: -1em;
+	height: 1em
 }
 </style>
 

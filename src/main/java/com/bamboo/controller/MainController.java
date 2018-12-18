@@ -63,5 +63,19 @@ public class MainController {
 		return "write";
 	}
 	
+	//introduce
+		@RequestMapping(value = "/introduce", method = RequestMethod.GET)
+		public String introduce(Locale locale, Model model) {
+			
+			Date date = new Date();
+			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+			
+			String formattedDate = dateFormat.format(date);
+			
+			model.addAttribute("serverTime", formattedDate );
+
+			return "introduce";
+		}
+	
 
 }
