@@ -9,13 +9,15 @@ public class Paging_DTO {
 
 	private int startPage;
 	private int endPage;
+	private int currentPage;
 	private boolean prev, next;
 	
 	private int total;
 	
 	public Paging_DTO(int pageNum, int total) {
-		this.total = total;		
-		this.endPage = (int) (Math.ceil(pageNum / 10.0)) * 10;
+		this.total = total;
+		this.currentPage = pageNum;
+		this.endPage = (int) (Math.ceil(currentPage / 10.0)) * 10;
 		this.startPage = endPage - 9;
 		
 		int realEnd = (int) (Math.ceil((total * 1.0) / 10));
