@@ -65,8 +65,8 @@ $("#freetalk").attr('class','nav-item active');
 }
 
 #btnwrite{
-	left:280px;
-	top:700px;
+	left:7%;
+	top:40%;
 	position:absolute;
 }
 
