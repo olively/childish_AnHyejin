@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Kyungmin Bamboo - freetalk</title>
+<title>Kyungmin Bamboo - Freetalk</title>
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"
@@ -65,8 +65,8 @@ $("#freetalk").attr('class','nav-item active');
 }
 
 #btnwrite{
-	left:280px;
-	top:700px;
+	left:7%;
+	top:40%;
 	position:absolute;
 }
 

@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,15 +54,27 @@
 	justify-content: center;
 }
 
-
+#footer {
+	margin-top: -1em;
+	height: 1em
+}
 </style>
+
+<script>
+$(document).ready(function() {
+	
+$("#gallery").attr('class','nav-item active');
+$("#footer").attr('class','py-5 bg-dark fixed-bottom');
+		
+});
+</script>
 </head>
 
 <body>
 
 	<!-- Header -->
 	<jsp:include page="/WEB-INF/views/header.jsp" flush="true" />
-	 
+
 
 
 
@@ -147,7 +159,7 @@
 			</div>
 		</div>
 
-	</div>
+	
 	<!-- /.container -->
 
 	<!-- Pagination -->
@@ -170,13 +182,13 @@
 			</ul>
 		</nav>
 	</div>
+</div>
 
-	</div>
 
 	<!-- Footer -->
 	<jsp:include page="/WEB-INF/views/footer.jsp" flush="true" />
 	<!-- /.container -->
-	</footer>
+
 
 	<!-- Bootstrap core JavaScript -->
 	<script
