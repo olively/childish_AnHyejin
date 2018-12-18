@@ -233,8 +233,7 @@ function () { $('#about ').focus();
 		<div class="container-fluid p-0">
 			<div class="row no-gutters popup-gallery">
 				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box"
-						href="${pageContext.request.contextPath}/resources/img/portfolio/fullsize/1.jpg">
+					<a class="portfolio-box" href="/main/introduce">
 						<img class="img-fluid"
 						src="${pageContext.request.contextPath}/resources/img/portfolio/thumbnails/1.jpg"
 						alt="">

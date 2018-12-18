@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -64,7 +64,11 @@
 	height: 1em
 }
 </style>
-
+<script>
+$(document).ready(function() {
+	$("#freetalk").attr('class','nav-item active');
+});
+</script>
 
 </head>
 

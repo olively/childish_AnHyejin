@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>Kyungmin Bamboo - Write</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css">
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -20,6 +22,8 @@
    href="${pageContext.request.contextPath}/resources/css/blog-post.css">
 <script>
 $(document).ready(function(){
+	
+	$("#freetalk").attr('class','nav-item active');
 	//console.log("A");
 	$("#introduce").on('click', function(){
 		$("#introduce").attr('class','nav-item active');
@@ -83,6 +87,9 @@ $(document).ready(function(){
 		$("#QnA").attr('class','nav-item');
 		$("#freetalk").attr('class','nav-item');
 	})
+	//-----------------------------------------------------
+		
+
 });
 </script>
 </head>
@@ -177,7 +184,8 @@ $(document).ready(function(){
 
          <div style="text-align: center;">
             <br>
-            <button type="button" class="btn btn-success" >Commit</button>
+            <button type="button" class="btn btn-success" >
+            	<i class="fas fa-check"> Commit</i></button>
          </div>
       </div>
 
