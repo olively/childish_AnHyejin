@@ -50,8 +50,9 @@ public class MainController {
 	
 	//post
 	@GetMapping("/post")
-	public String post(int p_bid) {
+	public String post(int p_bid, Model model) {
 		
+		model.addAttribute("vo", freeTalk_Board_Service.getRead(p_bid));
 		
 		
 		return "post";
