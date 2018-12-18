@@ -13,4 +13,5 @@ public class FreeTalkBoard_VO {
 	private int view_count;
 	private int like_count;
 	private Timestamp reg_date;
+	private String writer;
 }

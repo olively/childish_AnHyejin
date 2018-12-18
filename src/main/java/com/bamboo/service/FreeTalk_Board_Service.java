@@ -2,26 +2,49 @@ package com.bamboo.service;
 
 import java.util.List;
 
-import com.bamboo.domain.FreeTalkBoard_VO;
+import org.springframework.stereotype.Service;
 
+import com.bamboo.domain.FreeTalkBoard_VO;
+import com.bamboo.mapper.FreeTalkBoardMapper;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
 public class FreeTalk_Board_Service implements Board_Service<FreeTalkBoard_VO> {
 
+	private FreeTalkBoardMapper boardMapper;
+	
 	@Override
-	public List<FreeTalkBoard_VO> getList() {
+	public int getRowCount() {
 		// TODO Auto-generated method stub
-		return null;
+		return boardMapper.getRowCount();
+	}
+	
+	@Override
+	public List<FreeTalkBoard_VO> getNewestList(int pnum) {
+		// TODO Auto-generated method stub
+		pnum = (pnum - 1) * 10;
+		List<FreeTalkBoard_VO> newestBoardList = boardMapper.getNewestList(pnum);
+		
+		for (FreeTalkBoard_VO vo : newestBoardList) {
+			if (vo.getContent().length() > 30) {
+				vo.setContent(vo.getContent().substring(0, 30) + "...");
+			}
+		}
+		
+		return newestBoardList;
 	}
 
 	@Override
-	public FreeTalkBoard_VO getRead() {
+	public FreeTalkBoard_VO getRead(int p_bid) {
 		// TODO Auto-generated method stub
-		return null;
+		return boardMapper.getRead(p_bid);
 	}
 
 	@Override
-	public boolean write() {
+	public boolean write(FreeTalkBoard_VO vo) {
 		// TODO Auto-generated method stub
-		return false;
+		return boardMapper.write(vo);
 	}
-
 }
