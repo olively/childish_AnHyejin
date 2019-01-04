@@ -1,4 +1,4 @@
-package com.bamboo.domain;
+package com.bamboo.domain.FreeTalk;
 
 import java.sql.Timestamp;
 

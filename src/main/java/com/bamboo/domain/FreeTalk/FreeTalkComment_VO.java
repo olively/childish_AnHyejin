@@ -1,4 +1,4 @@
-package com.bamboo.domain;
+package com.bamboo.domain.FreeTalk;
 
 import java.sql.Timestamp;
 
@@ -11,4 +11,5 @@ public class FreeTalkComment_VO {
 	private String f_uid;
 	private String content;
 	private Timestamp reg_date;
+	private String writer;
 }

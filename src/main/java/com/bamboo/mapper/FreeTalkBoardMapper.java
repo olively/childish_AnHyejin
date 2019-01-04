@@ -2,7 +2,7 @@ package com.bamboo.mapper;
 
 import java.util.List;
 
-import com.bamboo.domain.FreeTalkBoard_VO;
+import com.bamboo.domain.FreeTalk.FreeTalkBoard_VO;
 
 public interface FreeTalkBoardMapper {
 

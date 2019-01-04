@@ -128,7 +128,7 @@ $(document).ready(function(){
    <jsp:include page="/WEB-INF/views/header.jsp" flush="true" />
 
    <!-- Page Content -->
-   <form class="form-horizontal" action="/main/write_processing" method="post">
+   <form class="form-horizontal" action="/main/freetalk/write_processing" method="post">
       <div class="container" id="write">
 
          <!-- title -->

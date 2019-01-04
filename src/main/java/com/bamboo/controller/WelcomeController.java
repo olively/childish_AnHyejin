@@ -23,15 +23,13 @@ import lombok.extern.log4j.Log4j;
 public class WelcomeController {
 	
 	@Autowired
-	private DepartmentMapper departmentMapper;
-	@Autowired
 	private PasswordEncoder passwordEncoder;
 	@Autowired
 	private Member_Service member_Service;
 	
 	@GetMapping("/")
 	public String home() {
-		return "main";
+		return "first";
 	}
 	
 	//login
@@ -45,7 +43,7 @@ public class WelcomeController {
 	@GetMapping("/signup")
 	public String signup(Model model) {
 
-		model.addAttribute("department", departmentMapper.getList());
+		model.addAttribute("department", member_Service.getDepartmentList());
 		return "signup";
 	}
 	

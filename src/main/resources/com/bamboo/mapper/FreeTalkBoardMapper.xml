@@ -9,12 +9,12 @@
 		SELECT COUNT(*) FROM FreeTalk_Board;
 	</select>
 	
-	<select id="getNewestList" resultType="com.bamboo.domain.FreeTalkBoard_VO">
+	<select id="getNewestList" resultType="com.bamboo.domain.FreeTalk.FreeTalkBoard_VO">
 		SELECT * FROM FreeTalk_Board
 		ORDER BY reg_date DESC, p_bid DESC LIMIT #{pnum}, 10;
 	</select>
 	
-	<select id="getRead" resultType="com.bamboo.domain.FreeTalkBoard_VO">
+	<select id="getRead" resultType="com.bamboo.domain.FreeTalk.FreeTalkBoard_VO">
 		SELECT * FROM FreeTalk_Board WHERE p_bid = #{p_bid}
 	</select>
 	

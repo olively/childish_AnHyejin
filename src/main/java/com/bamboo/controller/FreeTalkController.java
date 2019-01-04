@@ -19,18 +19,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bamboo.domain.AuthUser;
-import com.bamboo.domain.FreeTalkBoard_VO;
 import com.bamboo.domain.Paging_DTO;
 import com.bamboo.domain.User_VO;
+import com.bamboo.domain.FreeTalk.FreeTalkBoard_VO;
 import com.bamboo.service.Board_Service;
+import com.bamboo.service.Comment_Service;
 
 import lombok.Setter;
 
 @Controller
-@RequestMapping("/main/*")
-public class MainController {
+@RequestMapping("/main")
+public class FreeTalkController {
 	
 	@Autowired private Board_Service freeTalk_Board_Service;
+	@Autowired private Comment_Service freeTalk_Comment_Service;
 	
 	//free talk
 	@GetMapping("/freetalk")
@@ -41,52 +43,32 @@ public class MainController {
 		return "freetalk";
 	}
 	
-	//gallery
-	@RequestMapping(value = "/gallery", method = RequestMethod.GET)
-	public String gallery(Locale locale, Model model) {
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		//테스트 코드ㅇㄴㄹㄴㅇㄹ
-		return "gallery";
-	}
-	
 	//post
-	@GetMapping("/post")
+	@GetMapping("/freetalk/post")
 	public String post(int p_bid, Model model) {
 		
-		model.addAttribute("vo", freeTalk_Board_Service.getRead(p_bid));
-		
+		model.addAttribute("post_vo", freeTalk_Board_Service.getRead(p_bid));
+		model.addAttribute("comment_list", freeTalk_Comment_Service.getList(p_bid));
 		
 		return "post";
 	}
 	
 	//write
-	@GetMapping("/write")
-	public String write(Principal principal) {
+	@GetMapping("/freetalk/write")
+	public String write() {
 		
 		return "write";
 	}
 	
-	@PostMapping("/write_processing")
+	@PostMapping("/freetalk/write_processing")
 	public String write_processing(FreeTalkBoard_VO vo) {
 		AuthUser authUser =  (AuthUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User_VO user = authUser.getUser();
 		vo.setF_uid(user.getP_uid());
 		vo.setWriter(user.getAlias());
 		int pnum = freeTalk_Board_Service.write(vo);
-		return "redirect:/main/post?p_bid=" + pnum;
+		return "redirect:/main/freetalk/post?p_bid=" + pnum;
 	}
 	
-	//introduce
-		@RequestMapping(value = "/introduce", method = RequestMethod.GET)
-		public String introduce() {
-			return "introduce";
-		}
 	
-
 }

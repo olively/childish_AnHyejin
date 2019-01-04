@@ -7,12 +7,15 @@
 <html lang="en">
 
 <head>
- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+<meta name="_csrf" content="${_csrf.token}" />
+<!-- default header name is X-CSRF-TOKEN -->
+<meta name="_csrf_header" content="${_csrf.headerName}" />
 
 <title>Kyungmin Bamboo - Post</title>
 
@@ -65,9 +68,73 @@
 }
 </style>
 <script>
-$(document).ready(function() {
-	$("#freetalk").attr('class','nav-item active');
-});
+	function getTimeStamp(reg_date) {
+	  var d = new Date(reg_date);
+	  var s =
+	    leadingZeros(d.getFullYear(), 4) + '-' +
+	    leadingZeros(d.getMonth() + 1, 2) + '-' +
+	    leadingZeros(d.getDate(), 2) + ' ' +
+
+	    leadingZeros(d.getHours(), 2) + ':' +
+	    leadingZeros(d.getMinutes(), 2) + ':' +
+	    leadingZeros(d.getSeconds(), 2);
+
+	  return s + ".0";
+	}
+
+	function leadingZeros(n, digits) {
+	  var zero = '';
+	  n = n.toString();
+
+	  if (n.length < digits) {
+	    for (i = 0; i < digits - n.length; i++)
+	      zero += '0';
+	  }
+	  return zero + n;
+	}
+	
+	$(document).ready(function() {
+		$("#freetalk").attr('class', 'nav-item active');
+
+		$("#commentForm").submit(function(event) {
+			event.preventDefault();
+			var token = $("meta[name='_csrf']").attr("content");
+			var header = $("meta[name='_csrf_header']").attr("content");
+			var req = {};
+
+			req["content"] = $("textarea[name=content]").val();
+			req["f_bid"] = $("input[name=f_bid]").val();
+
+			$.ajax({
+				type : "POST",
+				url : "/main/freetalk/write_comment",
+				contentType : "application/json; charset=utf-8",
+				data : JSON.stringify(req),
+				dataType : 'json',
+				beforeSend : function(xhr) {
+					xhr.setRequestHeader(header, token);
+				},
+				success : function(data) {
+					data['reg_date'] = getTimeStamp(data['reg_date']);
+					
+					$("#commentList").append(
+						'<div class="media mb-4">' +
+						'<div class="media-body">' +
+							'<h5 class="mt-0">' + data['writer'] + '</h5>' +
+							'<p class="mt-0">' + data['reg_date'] + '</p>' +
+							'<p class="mt-0">' + data['content'] + '</p>' +
+						'</div>' +
+					'</div>'
+					);
+					
+					$("#commentForm").find("textarea").val("");
+				},
+				error : function(data) {
+					console.log(data);
+				}
+			});
+		});
+	});
 </script>
 
 </head>
@@ -88,41 +155,33 @@ $(document).ready(function() {
 			<div class="col-lg-10">
 
 				<!-- Title -->
-				<h1 class="mt-4">${vo.title}</h1>
+				<h1 class="mt-4">${post_vo.title}</h1>
 
 				<!-- Author -->
 				<p class="lead">
-					by <a href="#">${vo.writer }</a>
+					by <a href="#">${post_vo.writer }</a>
 				</p>
 
 				<hr>
 
 				<!-- Date/Time -->
 				<p>${vo.reg_date}</p>
-
 				<hr>
-
-				<!-- Preview Image -->
-				<!--  <img class="img-fluid rounded" src="http://placehold.it/900x300"
-					alt="">
-				-->
 				<hr>
-
 				<!-- Post Content -->
-				<p class="lead">${vo.content }</p>
-
-
+				<p class="lead">${post_vo.content }</p>
 				<hr>
-
 				<!-- Comments Form -->
 				<div class="card my-4">
 					<h5 class="card-header">Leave a Comment:</h5>
 					<div class="card-body">
-						<form>
+						<form id="commentForm">
 							<div class="form-group">
-								<textarea class="form-control" rows="3"></textarea>
+								<textarea class="form-control" name="content" rows="3"></textarea>
 							</div>
-							<button style="float:right;" type="submit" class="btn btn-primary">Submit</button>
+							<input type="hidden" name="f_bid" value="${post_vo.p_bid }" />
+							<button style="float: right;" type="submit"
+								class="btn btn-primary">Submit</button>
 						</form>
 					</div>
 				</div>
@@ -138,79 +197,35 @@ $(document).ready(function() {
 						</div>
 						<div id="collapseTwo" class="collapse" role="tabpanel"
 							aria-labelledby="headingTwo" data-parent="#accordion">
-							<div class="card-body">
+							<div id="commentList" class="card-body">
 								<!-- Single Comment -->
+								<c:forEach var="comment" items="${comment_list}">
 								<div class="media mb-4">
-									<img class="d-flex mr-3 rounded-circle"
-										src="http://placehold.it/50x50" alt="">
 									<div class="media-body">
-										<h5 class="mt-0">Commenter Name</h5>
-										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-										scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-										vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-										nisi vulputate fringilla. Donec lacinia congue felis in
-										faucibus.
+										<h5 class="mt-0">${comment.writer}</h5>
+										<p class="mt-0">${comment.reg_date}</p>
+										<p class="mt-0">${comment.content}</p>
 									</div>
 								</div>
-
-								<!-- Comment with nested comments -->
-								<div class="media mb-4">
-									<img class="d-flex mr-3 rounded-circle"
-										src="http://placehold.it/50x50" alt="">
-									<div class="media-body">
-										<h5 class="mt-0">Commenter Name</h5>
-										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-										scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-										vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-										nisi vulputate fringilla. Donec lacinia congue felis in
-										faucibus.
-
-										<div class="media mt-4">
-											<img class="d-flex mr-3 rounded-circle"
-												src="http://placehold.it/50x50" alt="">
-											<div class="media-body">
-												<h5 class="mt-0">Commenter Name</h5>
-												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-												scelerisque ante sollicitudin. Cras purus odio, vestibulum
-												in vulputate at, tempus viverra turpis. Fusce condimentum
-												nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-												in faucibus.
-											</div>
-										</div>
-
-										<div class="media mt-4">
-											<img class="d-flex mr-3 rounded-circle"
-												src="http://placehold.it/50x50" alt="">
-											<div class="media-body">
-												<h5 class="mt-0">Commenter Name</h5>
-												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-												scelerisque ante sollicitudin. Cras purus odio, vestibulum
-												in vulputate at, tempus viverra turpis. Fusce condimentum
-												nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-												in faucibus.
-											</div>
-										</div>
-
-									</div>
-								</div>
+								</c:forEach>
 							</div>
-
 						</div>
+
 					</div>
-					<br>
-					<br>
 				</div>
+				<br> <br>
 			</div>
-
-
-
-
-
-			<!-- Sidebar Widgets Column -->
-			<div class="col-md-4"></div>
-
 		</div>
-		<!-- /.row -->
+
+
+
+
+
+		<!-- Sidebar Widgets Column -->
+		<div class="col-md-4"></div>
+
+	</div>
+	<!-- /.row -->
 
 	</div>
 	<!-- /.container -->

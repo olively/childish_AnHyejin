@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.bamboo.domain.FreeTalkBoard_VO;
+import com.bamboo.domain.FreeTalk.FreeTalkBoard_VO;
 import com.bamboo.mapper.FreeTalkBoardMapper;
 
 import lombok.Setter;

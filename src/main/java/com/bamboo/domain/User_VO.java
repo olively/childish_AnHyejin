@@ -12,5 +12,4 @@ public class User_VO {
 	private String alias;
 	private String password;
 	private boolean enabled;
-	//private List<Auth_VO> authList;	
 }

@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.bamboo.domain.FreeTalkBoard_VO;
+import com.bamboo.domain.FreeTalk.FreeTalkBoard_VO;
+import com.bamboo.domain.FreeTalk.FreeTalkComment_VO;
 import com.bamboo.mapper.FreeTalkBoardMapper;
 
 import lombok.AllArgsConstructor;
@@ -30,7 +31,6 @@ public class FreeTalk_Board_Service implements Board_Service<FreeTalkBoard_VO> {
 		for (FreeTalkBoard_VO vo : newestBoardList) {
 			if (vo.getContent().length() > 30) {
 				vo.setContent(vo.getContent().substring(0, 30) + "...");
-				System.out.println(vo.getContent());
 			}
 		}
 		
